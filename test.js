@@ -39,3 +39,22 @@
 
 // const user = 'ivan'
 // alert(`Привет, ${user}`)
+
+// {
+//     "workbench.colorTheme": "Default Dark+",
+//     "liveServer.settings.donotShowInfoMsg": true,
+//     "git.confirmSync": false,
+//     "files.autoSave": "onFocusChange",
+//     "[html]": {
+//         "editor.defaultFormatter": "esbenp.prettier-vscode"
+//     },
+//     "editor.formatOnSave": true,
+//     "[javascript]": {
+//         "editor.defaultFormatter": "esbenp.prettier-vscode"
+//     },
+//     "explorer.confirmDelete": false,
+//     "window.zoomLevel": 1,
+//     "editor.codeActionsOnSave": {
+
+//     }
+// }

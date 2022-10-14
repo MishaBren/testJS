@@ -1,5 +1,3 @@
-'use strict'
-
 // const numberOfFilms = +prompt('Кіко кіна ти вже відів', '')
 
 // const personalMovieDB = {
@@ -79,3 +77,51 @@
 //   }
 //   console.log(i)
 // }
+
+// Цикли в циклах
+
+// for (let i = 0; i < 3; i++) {
+//   console.log(i)
+//   for (let j = 0; j < 3; j++) {
+//     console.log(j)
+//   }
+// }
+
+// function add(a, b, c) {
+//   a + b + c
+// }
+// add(5, 5, 5)
+
+// function add(a, b, c) {
+//   return a * b + c
+// }
+
+// console.log()
+
+// add(5, 5, 5)
+
+// function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
+//   let message = `You ordered droids worth ${
+//     orderedQuantity * pricePerDroid + deliveryFee
+//   } credits. Delivery (${deliveryFee} credits) is included in total price.`
+
+//   return message
+// }
+
+// console.log(makeOrderMessage(5, 6, 6))
+
+function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
+  let totalPrice = pricePerDroid * orderedQuantity
+  let message
+
+  if (totalPrice > customerCredits) {
+    message = 'Insufficient funds!'
+  } else {
+    message = `You ordered ${orderedQuantity} droids, you have ${
+      customerCredits - totalPrice
+    } credits left`
+  }
+  return message
+}
+
+console.log(makeTransaction(12, 2, 1))

@@ -2,7 +2,6 @@
 // console.log(userName)
 // // -----------------------
 
-
 // let year = 2022
 
 // let userAge = year - 1989
@@ -10,7 +9,6 @@
 // let nameAge = userName + ' ' + userAge
 // console.log(nameAge)
 // // -----------------------
-
 
 // const storeName = 'Rozetka'
 // const storeDescription = {
@@ -24,7 +22,6 @@
 // storeDescription.open = true
 // console.log(storeDescription)
 // // -------------------------
-
 
 // alert('Hello User')
 
@@ -58,16 +55,17 @@
 // console.log(result)
 // // ---------------------
 
-
-// for (let i = 0; i < 3; i++) {
-//     console.log(`firstLevel: ${i}`);
-//     for (let j = 0; j < 3; j++) {
-//         console.log(`secondLevel: ${j}`);
-//         for (let k = 0; k < 3; k++) {
-//         console.log(`tirdLevel: ${k}`);
-//         }
+// first: for (let i = 0; i < 3; i++) {
+//   console.log(`firstLevel: ${i}`)
+//   for (let j = 0; j < 3; j++) {
+//     console.log(`secondLevel: ${j}`)
+//     for (let k = 0; k < 3; k++) {
+//       if (k === 2) continue first
+//       console.log(`tirdLevel: ${k}`)
 //     }
+//   }
 // }
+
 // // --------------------
 
 // for (let i = 5; i < 11; i++) {
@@ -76,10 +74,24 @@
 // --------------------------
 
 // for (let i = 20; i > 9; i--) {
-//     console.log(i);
+//   if (i === 12) break
+//   console.log(i)
 // }
-// ---------------------------------
+// ------------------
 
-for (let i = 2; i = 10; i++) {
-        console.log(i);
-    }
+// for (let i = 2; i <= 10; i++) {
+//   console.log(i)
+// }
+// ---------------------
+
+function firstTask() {
+  const arr = [3, 5, 8, 16, 20, 23, 50]
+  const result = []
+
+  for (let i = 0; i < arr.length; i++) {
+    result[i] = arr[i]
+  }
+
+  console.log(result)
+  return result
+}

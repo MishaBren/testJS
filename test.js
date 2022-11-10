@@ -215,27 +215,27 @@
 // ******
 // *******
 
-// let result = ''
-// const lines = 5
+let result = ''
+const lines = 5
 
 // for (let i = 0; i <= lines; i++) {
-//   for (let j = 0; j < lines - i; j++) {
-//     result += '1'
+//   for (let j = 1; j < lines - i; j++) {
+//     result += ''
 //   }
 //   for (let j = 0; j < 2 * i + 1; j++) {
-//     result += '2'
+//     result += '*'
 //   }
 //   result += '\n'
 // }
 // console.log(result)
 
 // for (let i = 0; i <= lines; i++) {
-//   result += '1'
+//   result += ''
 //   for (let k = 0; k < lines - i; k++) {
-//     result += '2'
+//     result += ' '
 //   }
 //   for (let j = 0; j < 2 * i + 1; j++) {
-//     result += '3'
+//     result += '*'
 //   }
 
 //   result += '\n'
@@ -276,7 +276,7 @@
 //  -------------КУРСИ ВАЛЮТ------------
 
 // const usdCurr = 28
-// const eurCurr = 32
+// // const eurCurr = 32
 
 // function convert(amount, curr) {
 //   console.log(curr * amount)
@@ -353,13 +353,111 @@
 // Эта задача уже ближе к реальности, когда вам нужно учитывать и тип данных у аргументов, проверять их и продумывать логику работы внутри. Обратите внимание на прогрессию, она рассчитывается по простой формуле умножения. Если первый аргумент 5, а второй 3, то число повторяется 3 раза, каждый раз увеличиваясь на само себя. Это базовая математика, которая и нужна для работы в 95% случае на фронтенде.
 // Да, задача сложнее, но она просто объединяет все то, что мы уже учили.
 
-let str = ''
-function getMathResult(a, b) {
-  for (let i = 1; i <= b; i++) {
-    str += `${a * i}`
-  }
-  return str
-}
-console.log(str)
+// function getMathResult(num, times) {
+//   if (typeof times !== 'number' || times <= 0) {
+//     return num
+//   }
 
-getMathResult(5, 3)
+//   let str = ''
+
+//   for (let i = 1; i <= times; i++) {
+//     if (i === times) {
+//       str += `${num * i}`
+//       // Тут без черточек в конце
+//     } else {
+//       str += `${num * i}---`
+//       // Это тоже самое, что и
+//       // str = str + num * i + "---"
+//     }
+//   }
+//   console.log(str)
+//   return str
+// }
+
+// getMathResult(9, 9)
+
+// ----------------Метод Функції--------------
+
+// const bookShef = {
+//   book: ['Кобзар', 'Біблія', 'Буквар'],
+
+//   //  ----------------add--------------
+//   addBook(name) {
+//     this.book.push(name)
+//   },
+
+//   // --------dell----
+//   removeBook(bookName) {
+//     const bookIndex = this.book.indexOf(bookName)
+//     this.book.splice(bookIndex, 1)
+//   },
+// }
+// // bookShef.addBook('Абетка')
+// bookShef.removeBook('Кобзар')
+// console.log(bookShef.book)
+
+// ---------------------------
+// Функції
+
+// function sum(x, y, z) {
+//   return x * y * z
+// }
+
+// let res = sum()
+// console.log(res)
+
+// // ------------Функція перебора
+// function count(countFrom = 0, countTo = 10, step = 1) {
+//   for (let i = countFrom; i <= countTo; i += step) {
+//     console.log(i)
+//     console.log(countTo * i)
+//   }
+// }
+
+// count(11, 58, 6)
+
+// -----------------------
+
+// var step
+// for (step = 0; step < 5; step++) {
+//   // Запускается 5 раз, с шагом от 0 до 4.
+//   console.log('Идём 1 шаг на восток')
+// }
+// let i = 1
+// do {
+//   i += 1
+//   console.log(i)
+// } while (i < 5)
+// ----------------------
+// var n = 0
+// var x = 0
+// while (n < 9) {
+//   n++
+//   x += n
+// }
+// console.log(x, n)
+// -------------------
+// var x = 0
+// var z = 0
+// labelCancelLoops: while (true) {
+//   console.log('Внешний цикл: ' + x)
+//   x += 1
+//   z = 1
+//   while (true) {
+//     console.log('Внутренний цикл: ' + z)
+//     z += 1
+//     if (z === 10 && x === 10) {
+//       break labelCancelLoops
+//     } else if (z === 10) {
+//       break
+//     }
+//   }
+// }
+
+// ------------------
+// let obj = { model: 'AUDI A8', year: '2019', color: 'brown' }
+
+// for (key in obj) {
+//   console.log(`${key} = ${obj[key]}`)
+// }
+// -------------------------------------

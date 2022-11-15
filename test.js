@@ -595,6 +595,7 @@ getMathResult(9, 9);
 // console.log(fib())
 
 // -------------------------
+
 function fib(num) {
   if (typeof num !== "number" || num <= 0 || !Number.isInteger(num)) {
     return "";
@@ -621,4 +622,3 @@ function fib(num) {
 }
 
 console.log(fib("ssaf"));
-  

@@ -1,5 +1,15 @@
-'use strict'
-const numberOfFilms = +prompt('Кіко кіна ти вже відів', '')
+'use strict';
+let numberOfFilms
+
+function start() {
+  numberOfFilms = +prompt('Скільки фільмів ти вже бачив?', '');
+
+  while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+    numberOfFilms = +prompt('Скільки фільмів ти вже бачив?', '');
+
+  }
+}
+start()
 
 const personalMovieDB = {
   count: numberOfFilms,
@@ -7,38 +17,51 @@ const personalMovieDB = {
   actors: {},
   genres: [],
   privat: false,
-}
+};
 
-// const a = prompt('Один з останніх фільмів', ''),
-//   b = +prompt('Оцініть фільм', ''),
-//   c = prompt('Один з останніх фільмів', ''),
-//   d = +prompt('Оцініть фільм', '')
 
-// personalMovieDB.movies[a] = b
-// personalMovieDB.movies[c] = d
 
-for (let i = 0; i < 2; i++) {
-  const a = prompt('Один з останніх фільмів', '')
-  b = prompt('Оцініть фільм', '')
-
-  if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-    personalMovieDB.movies[a] = b
-    console.log('done')
-  } else {
-    console.log('error')
-    i--
+function rememberMyFilms() {
+  for (let i = 0; i < 2; i++) {
+    const a = prompt('Один з останніх фільмів', '');
+    const b = prompt('Оцініть фільм', '');
+    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+      personalMovieDB.movies[a] = b;
+      console.log('done');
+    } else {
+      console.log('error');
+      i--;
+    }
   }
 }
 
-if (personalMovieDB.count < 10) {
-  console.log('Мало ти бачив')
-} else if (personalMovieDB.count > 10 && personalMovieDB.count < 30) {
-  console.log('Класичний глядач')
-} else if (personalMovieDB.count >= 30) {
-  console.log('Супер Глядач')
-} else {
-  console.log('error')
+rememberMyFilms()
+
+function detectPersonalLevel() {
+  if (personalMovieDB.count < 10) {
+    console.log('Слабкий глядач');
+  } else if (personalMovieDB.count > 10 && personalMovieDB.count < 30) {
+    console.log('Класичний глядач');
+  } else if (personalMovieDB.count >= 30) {
+    console.log('Відмінний Глядач');
+  } else {
+    console.log('error');
+  }
 }
 
-console.log(personalMovieDB)
-//
+detectPersonalLevel()
+
+function showMyDb(hidden) {
+  if (!hidden) {
+    console.log(personalMovieDB);
+  }
+}
+
+showMyDb(personalMovieDB.privat)
+
+function writeYourGenres() {
+  for (let i = 1; i <= 3; i++) {
+    personalMovieDB.genres[i - 1] = prompt(`Ваш любимий жанр під номером ${i}`);
+  }
+}
+writeYourGenres()

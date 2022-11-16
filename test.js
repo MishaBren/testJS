@@ -207,23 +207,22 @@
 
 // ---------------------------------------Піраміда
 
-// *
-// **
-// ***
-// ****
-// *****
-// ******
-// *******
+//      *
+//     ***
+//    *****
+//   *******
+//  *********
+// ***********
 
 // let result = ''
-// const lines = 5
+// const lines = 10
 
 // for (let i = 0; i <= lines; i++) {
 //   for (let j = 0; j < lines - i; j++) {
 //     result += '1'
 //   }
 //   for (let j = 0; j < 2 * i + 1; j++) {
-//     result += '2'
+//     result += '*'
 //   }
 //   result += '\n'
 // }
@@ -353,13 +352,104 @@
 // Эта задача уже ближе к реальности, когда вам нужно учитывать и тип данных у аргументов, проверять их и продумывать логику работы внутри. Обратите внимание на прогрессию, она рассчитывается по простой формуле умножения. Если первый аргумент 5, а второй 3, то число повторяется 3 раза, каждый раз увеличиваясь на само себя. Это базовая математика, которая и нужна для работы в 95% случае на фронтенде.
 // Да, задача сложнее, но она просто объединяет все то, что мы уже учили.
 
-let str = ''
-function getMathResult(a, b) {
-  for (let i = 1; i <= b; i++) {
-    str += `${a * i}`
-  }
-  return str
-}
-console.log(str)
 
-getMathResult(5, 3)
+// function getMathResult(num, times) {
+//   if (typeof (times) !== 'number' || times <= 0) {
+//     return num;
+//   }
+//   let str = '';
+//   for (let i = 1; i <= times; i++) {
+//     if (i === times) {
+//       str += `${num * i}`;
+//     } else {
+//       str += `${num * i}---`;
+//     }
+//   }
+//   console.log(str)
+//   return str;
+// }
+// getMathResult(5, 3)
+
+
+// --------------------------ЗАДАЧА--------------
+
+
+// 1) Создайте функцию, которая будет вычислять объем и площадь полной поверхности куба(тоже базовая математика, иногда используется в создании анимаций).Эта функция принимает в себя целое число со значением длины ребра куба.Ответ выведите в формате строки, который изображен в примерах.
+// Если в функцию попал неправильный аргумент или вычислить значения невозможно - вернуть строку "При вычислении произошла ошибка"
+// НЕ ИСПОЛЬЗУЙТЕ ОПЕРАТОР СТЕПЕНИ ** - в онлайн среде браузера он не работает и тесты будут ломаться.Это из - за того, что этот оператор из более нового стандарта, чем тут доступен.
+//   Примеры:
+// calculateVolumeAndArea(5)  => 'Объем куба: 125, площадь всей поверхности: 150'
+// calculateVolumeAndArea(15)  => 'Объем куба: 3375, площадь всей поверхности: 1350'
+// calculateVolumeAndArea(15.5)  => 'При вычислении произошла ошибка'
+// calculateVolumeAndArea('15')  => 'При вычислении произошла ошибка'
+// calculateVolumeAndArea(-15)  => 'При вычислении произошла ошибка'
+
+
+// function calculateVolumeAndArea(length) {
+//   if (typeof (length) !== 'number' || length <= 0 || length % 1 !== 0) {
+//     return "При вычислении произошла ошибка";
+//   }
+//   const s = length * length * 6;
+//   const v = length * length * length;
+//   return `Объем куба: ${v}, площадь всей поверхности: ${s}`;
+// }
+// calculateVolumeAndArea(5);
+// console.log(res);
+
+
+
+// // ----------------------------------------
+// function calculateVolumeAndArea() {
+
+//   if (typeof (length) !== 'number' || length < 0 || !Number.isInteger(length)) {
+//     return "При вычислении произошла ошибка";
+//   }
+//   let volume = 0,
+//     area = 0;
+
+//   volume = length * length * length;
+//   // length ** 3 - это тоже самое, что и выше или варианты через цикл.
+//   // ** - это оператор степени, напоминаю. Но онлайн редактор его не принимает =/
+//   area = 6 * (length * length);
+
+//   return `Объем куба: ${volume}, площадь всей поверхности: ${area}`;
+// }
+// console.log(calculateVolumeAndArea(10))
+
+// -------------------------------------------------------------------
+
+// function getCoupeNumber(ticket) {
+//   if (typeof (ticket) !== 'number' || !Number.isInteger(ticket) || ticket < 0) {
+//     return "Ошибка. Проверьте правильность введенного номера места";
+//   } else if (ticket == 0 || ticket > 36) {
+//     return "Таких мест в вагоне не существует";
+//   }
+//   return Math.ceil(ticket / 4);
+// }
+
+// console.log(getCoupeNumber(12));
+
+// ---------------------------TIME-----------------------------------------
+
+function getCoupeNumber(minut) {
+  if (typeof (minut) !== 'number' || !Number.isInteger(minut) || minut < 0) {
+    return "Ошибка, проверьте данные";
+  } else if (minut == 0 || minut > 600) {
+    return "Ошибка, проверьте данные";
+  }
+  let a = minut / 60;
+  hodunu = Math.trunc(a);
+  hvulunu = minut % 60;
+
+  if (hodunu == 0 || hodunu >= 5) {
+    return `Это ${hodunu} часов и ${hvulunu} минут`;
+
+  } else if (hodunu == 1) {
+    return `Это ${hodunu} час и ${hvulunu} минут`;
+
+  } else {
+    return `Это ${hodunu} часa и ${hvulunu} минут`;
+  }
+}
+console.log(getCoupeNumber(520));
+

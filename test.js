@@ -396,9 +396,8 @@
 // calculateVolumeAndArea(5);
 // console.log(res);
 
-
-
 // // ----------------------------------------
+
 // function calculateVolumeAndArea() {
 
 //   if (typeof (length) !== 'number' || length < 0 || !Number.isInteger(length)) {
@@ -431,25 +430,399 @@
 
 // ---------------------------TIME-----------------------------------------
 
-function getCoupeNumber(minut) {
-  if (typeof (minut) !== 'number' || !Number.isInteger(minut) || minut < 0) {
-    return "Ошибка, проверьте данные";
-  } else if (minut == 0 || minut > 600) {
-    return "Ошибка, проверьте данные";
-  }
-  let a = minut / 60;
-  hodunu = Math.trunc(a);
-  hvulunu = minut % 60;
+// function getCoupeNumber(minut) {
+//   if (typeof (minut) !== 'number' || !Number.isInteger(minut) || minut < 0) {
+//     return "Ошибка, проверьте данные";
+//   } else if (minut == 0 || minut > 600) {
+//     return "Ошибка, проверьте данные";
+//   }
+//   let a = minut / 60;
+//   hodunu = Math.trunc(a);
+//   hvulunu = minut % 60;
 
-  if (hodunu == 0 || hodunu >= 5) {
-    return `Это ${hodunu} часов и ${hvulunu} минут`;
+//   if (hodunu == 0 || hodunu >= 5) {
+//     return `Это ${hodunu} часов и ${hvulunu} минут`;
 
-  } else if (hodunu == 1) {
-    return `Это ${hodunu} час и ${hvulunu} минут`;
+//   } else if (hodunu == 1) {
+//     return `Это ${hodunu} час и ${hvulunu} минут`;
 
-  } else {
-    return `Это ${hodunu} часa и ${hvulunu} минут`;
-  }
+//   } else {
+//     return `Это ${hodunu} часa и ${hvulunu} минут`;
+//   }
+// }
+// console.log(getCoupeNumber(38));
+
+// ------------------------Обєкти--------------------
+
+// const object = {
+//   name: 'Misha',
+//   surname: 'Brenzovich',
+//   car: {
+//     first: 'Lada',
+//     second: 'Opel',
+//     third: 'BMW'
+//   },
+//   makeTest: function () {
+//     console.log('Bravo');
+//   }
+// };
+
+// for (let key in object) {
+//   console.log(key);
+// }
+
+// object.makeTest();
+
+// const { first, second } = object.car;
+
+// console.log(first);
+
+// console.log(Object.keys(object));
+
+
+
+// ---------------МАСИВИ-------------------------
+
+// const mass = [1, 20, 3, 41, 5, 6, 7, 8];
+
+// mass.sort(sortNum);
+
+// function sortNum(a, b) {
+//   return a - b;
+// }
+// console.log(mass)
+// mass.forEach(function (item, i, mass) {
+//   console.log(`${i}: ${item} всередині масиву ${mass}`)
+// })
+// mass.pop();
+// mass.push(10);
+// console.log(mass);
+// console.log(mass.length);
+
+// for (let i = 0; i < mass.length; i++) {
+//   console.log(mass[i]);
+// }
+
+// for (let value of mass) {
+//   console.log(value);
+// }
+
+// ------------------------------LINEAR SEARCH------------
+// const testMass = [1, 20, 3, 41, 5, 6, 7, 8];
+
+// function LinearSearch(t, A)      // t - искомый элемент,
+// {                               // A - массив, в котором ищем.
+//   var n = A.length, i = 0;
+
+//   A[n] = t;
+
+//   while (A[i] !== t) i++;
+
+//   if (i < n) return i;          // На выходе индекс искомого элемента.
+//   else return -1;               // Если искомого элемента нет в массиве, то -1.
+// }
+// console.log(LinearSearch(8, testMass));
+
+
+// --------------------------------------
+
+// const testMass = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// function BinarySearch(t, A)         // t - искомый элемент,
+// {                                  // A - упорядоченный массив, в котором ищем.
+//   var i = 0, j = A.length - 1, k;
+
+//   while (i <= j) {
+//     k = Math.floor((i + j) / 2);
+//     if (t === A[k]) return k;
+//     else if (t < A[k]) j = k - 1;
+//     else i = k + 1;
+//   }
+//   // На выходе индекс искомого элемента.
+//   return -1;                     // Если искомого элемента нет в массиве, то -1.
+// }
+// console.log(BinarySearch(3, testMass));
+
+// --------------------------------------------Копіювання обєкту-------------
+// const object = {
+//   name: 'Misha',
+//   surname: 'Brenzovich',
+//   car: {
+//     first: 'Lada',
+//     second: 'Opel',
+//     third: 'BMW'
+//   }
+// };
+// const copyObject = {};
+// function copy(objCopy) {
+//   for (let key in objCopy) {
+//     copyObject[key] = objCopy[key];
+//     // return copyObject;
+//   }
+// }
+// copy(object);
+// copyObject.name = 'dima';
+// // const copyObject = object;
+// // copyObject.name = 'dima';
+// console.log(object);
+// console.log(copyObject);
+// const add = {
+//   supercar: 'Lambo',
+//   sportcar: 'GTR'
+// };
+// // console.log(Object.assign(copyObject, add));
+// const clone = Object.assign({}, add);
+// clone.newObj = 155;
+// console.log(clone);
+// console.log(add);
+
+// ------------------------КОПІЮВААНЯ МАСИВУ----------------------
+
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+// const copyArr = arr.slice();
+// copyArr[1] = 'dsvsevsvs';
+// console.log(arr);
+// console.log(copyArr);
+// // ----------
+
+// const video = ['youTube', 'viteo', 'tiktok'];
+// const blog = ['bloger', 'wordPress', 'liveJornal'];
+// const internet = [...video, ...blog, 'telegram', 'facebook'];
+
+// console.log(internet);
+
+// // ----------------------
+// function log(a, b, c) {
+//   console.log(a);
+//   console.log(b);
+//   console.log(c);
+// }
+// const num = [6, 5, 9];
+
+// log(...num);
+
+// const obj = {
+//   one: 1,
+//   two: 2
+// };
+
+// const newObj = { ...obj };
+// newObj.three = 3;
+// console.log(obj, newObj);
+
+
+// ---------------Задача----------------
+
+
+// const personalPlanPeter = {
+//   name: "Peter",
+//   age: "29",
+//   skills: {
+//     languages: ['ru', 'eng'],
+//     programmingLangs: {
+//       js: '20%',
+//       php: '10%'
+//     },
+//     exp: '1 month'
+//   },
+
+//   showAgeAndLangs: function (plan) {
+//     const { age } = plan;
+//     const { languages } = plan.skills;
+//     let str = `Мне ${age} и я владею языками: `;
+
+//     languages.forEach(function (lang) {
+//       str += `${lang.toUpperCase()} `;
+//     });
+//     return str;
+//   }
+// };
+
+// console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter)
+// );
+
+// function showProgrammingLangs(plan) {
+//   let str = '';
+//   const { programmingLangs } = plan.skills;
+//   for (let key in programmingLangs) {
+//     str += `Язык ${key} изучен на ${programmingLangs[key]}\n`
+//   }
+//   return str;
+// }
+// console.log(showProgrammingLangs(personalPlanPeter));
+
+// function showExperience(plan) {
+//   const { exp } = plan.skills;
+//   return exp;
+// }
+// console.log(showExperience(personalPlanPeter));
+
+// function showExperience(plan) {
+//   let a = plan.skills.exp;
+//   return `${a}`;
+// }
+// console.log(showExperience(personalPlanPeter));
+
+// function showProgrammingLangs(plan) {
+//   let a = { ...plan.skills.programmingLangs };
+//   for (let key in a) {
+//     console.log(`Язик ${key} изучен на ${a}`, a);
+//   }
+//   // const { js, php } = plan.skills.programmingLangs;
+//   // return `Язык js изучен на ${js} Язык php изучен на ${php}`;
+// }
+// console.log(showProgrammingLangs(personalPlanPeter));
+
+// --------------------------------
+
+// Напишите функцию showFamily, которая будет принимать в себя массив строк и возвращать сообщение в нужном формате.
+
+//   showFamily(family)  => 'Семья состоит из: Peter Ann Alex Linda'
+
+// Имена подставляются автоматически из массива.Если массив пустой, то выводится сообщение 'Семья пуста'
+
+// const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+
+// function showFamily(arr) {
+//   if (arr.length === 0) {
+//     let str = '';
+//     str = `Семья пуста`;
+//   }
+//   else {
+//     str = `Семья состоит из: `;
+//   }
+
+//   arr.forEach(a => str += `${a} `)
+//   return str;
+// }
+// console.log(showFamily(family));
+
+
+
+
+// function showFamily(arr) {
+//   let str = '';
+
+//   arr.length === 0 ? str = 'Семья пуста' : str = 'Семья состоит из: ';
+
+//   arr.forEach(member => {
+//     str += `${member} `;
+//   });
+
+//   return str;
+// }
+
+// showFamily(family);
+
+
+
+
+
+// const arraySparse = [1, 3, , 7];
+// let numCallbackRuns = 0;
+
+// arraySparse.forEach((element) => {
+//   console.log(element);
+//   numCallbackRuns++;
+// });
+
+// console.log("numCallbackRuns: ", numCallbackRuns);
+
+
+// const massiv = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// massiv.forEach((a) => { console.log(a + 12); });
+
+// ------------------------------
+
+// const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+// function standardizeStrings(arr) {
+//   arr.forEach((element) => { console.log(element.toLowerCase()); });
+
+// }
+// standardizeStrings(favoriteCities)
+// ---------------------------------------------------------
+
+// Задача с собеседований.Напишите функцию reverse, которая принимает в себя строку и возвращает эту строку в обратном порядке.
+//   Пример:
+// const someString = 'This is some strange string';
+// reverse(someString) => 'gnirts egnarts emos si sihT'
+// Функцию можно применить к любой строке.Если в функцию приходит не строка - вернуть сообщение "Ошибка!"
+// Это очень интересная задача, которую можно решить несколькими способами.Её дают для того, чтобы оценить навыки и знания программиста, посмотреть как он думает.Как небольшая подсказка, есть метод, который может вам помочь.И часть дополнительных вариантов решения мы тоже изучим в течении курса.
+// Может показать сложной с первого взгляда, но это совсем не так 🙂
+
+
+// let someString = 544;
+
+// function reverse(str) {
+//   if (typeof (str) !== 'string') {
+//     return "Ошибка!";
+//   }
+//   // Самый оптимальный вариант решения
+//   return str.split('').reverse().join('');
+// }
+// reverse(someString);
+// console.log(someString);
+
+
+// 4) Представьте такую реальную ситуацию.У вас есть банкомат, который выдает деньги из двух разных банков в разных валютах.Один банк основной с базовыми валютами, второй дополнительный с прочими валютами:
+// const baseCurrencies = ['USD', 'EUR'];
+// const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+
+// Вам нужно создать главную функцию банкомата availableCurr, которая принимает два аргумента: первый - это массив со всеми доступными валютами из двух банков сразу(сейчас представим, что они не могут повторяться), второй - необязательный аргумент, который указывает ту валюту, которая сейчас закончилась в банкомате.Если массив в первом аргументе пустой - то функция возвращает строку 'Нет доступных валют'.Функция возвращает строку в нужном виде.
+//   Пример:
+// availableCurr(['UAH', 'RUB', 'CNY'], 'CNY')
+// Вернет строку:
+// Доступные валюты:
+// UAH
+// RUB
+// Заметьте:
+// - CNY(юань) исчез из списка валют, значит такая валюта закончилась
+//   - После валюты: стоит перенос строки \n, и после каждой валюты тоже.Это важно для тестов
+//     - Данные для первого аргумента должны приходить сразу из двух банков, причем сначала baseCurrencies, потом additionalCurrencies по порядку
+
+
+// const baseCurrencies = ['USD', 'EUR'];
+// const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+
+// let a;
+// let b
+// function availableCurr(arr, missingCurr) {
+//   if (arr.length === 0) {
+//     a = 'Нет доступных валют';
+//   } else {
+//     a = [...baseCurrencies, ...additionalCurrencies];
+
+//     arr.forEach(member => {
+
+//     }
+//     );
+
+//     return a;
+//   }
+// }
+// availableCurr(['USD', 'EUR'], 'CNY');
+// console.log(a)
+
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'PLN', 'CNY'];
+
+function availableCurr(arr, missingCurr) {
+  let str = '';
+  arr.length === 0 ? str = 'Нет доступных валют' : str = 'Доступные валюты:\n';
+
+  arr.forEach(function (curr, i) {
+    if (curr !== missingCurr) {
+      str += `${curr}\n`;
+    }
+  });
+  // Или
+  // for (let i = 0; i < arr.length; i++) {
+  //     if (arr[i] === missingCurr) {
+  //         continue;
+  //     }
+  //     str += `${arr[i]}\n`;
+  // }
+  return str;
 }
-console.log(getCoupeNumber(520));
-
+console.log(availableCurr([...baseCurrencies, ...additionalCurrencies], 'CNY'))
